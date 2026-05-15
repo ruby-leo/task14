@@ -11,4 +11,4 @@ class TestLogoutFunction:
             dashboard_page.click_new_alert_close_button()
         dashboard_page.click_profile_click_icon()
         dashboard_page.click_logout()
-        assert "/login" in login_page.get_current_url()
+        assert "/login" in login_page.get_current_url(), "Logout is not successful"
