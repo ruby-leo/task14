@@ -2,11 +2,15 @@ from selenium.common import ElementClickInterceptedException, StaleElementRefere
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from utilities.read_json import get_config
+
+
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
     def get_web_driver_wait(self):
-        return WebDriverWait(self.driver, 10)
+        config=get_config()
+        return WebDriverWait(self.driver, config["explicit_timeout"])
     def enter_text(self, locator, text):
         try:
             element = self.get_web_driver_wait().until(
