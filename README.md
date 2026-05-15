@@ -1,4 +1,4 @@
-### Framework Structure Overview:
+### Page Object Model Framework Structure Overview:
 
 * config -> config.json: Base URL, test account credentials and explicit wait are defined here
 * pages: It has the base_page with implementation for all the actions. They are implemented using Explicit Wait so it waits until the desired condition is met or timed out. It also has all the subpages like login and dashboard page and their elements and action methods. Page Object Model is implemented in these pages.
