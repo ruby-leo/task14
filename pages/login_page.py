@@ -28,9 +28,6 @@ class LoginPage(BasePage):
         self.enter_text(self.password_text_box, password)
         self.click(self.sign_in_button)
 
-    def get_current_url(self):
-        return self.current_url("/login")
-
     def is_email_box_displayed(self):
         return self.is_displayed(self.email_text_box)
 

@@ -18,8 +18,7 @@ class TestLoginFunction:
         login_page.enter_email(test_data["test_account_email"])
         login_page.enter_password(test_data["test_account_password"])
         login_page.click_sign_in()
-        dashboard_page = DashboardPage(driver)
-        assert "/dashboard" in dashboard_page.get_current_url(), "Login is not successful"
+        assert login_page.does_url_contain("/dashboard"), "Login is not successful"
 
     # --- Negative Scenarios ---
     def test_login_with_valid_email_but_invalid_password(self, driver, test_data):

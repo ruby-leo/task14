@@ -12,9 +12,6 @@ class DashboardPage(BasePage):
     def click_logout(self):
         self.click(self.logout_link)
 
-    def get_current_url(self):
-        return self.current_url("/dashboard")
-
     def is_new_alert_present(self):
         return self.is_displayed(self.new_alert_close_button)
 

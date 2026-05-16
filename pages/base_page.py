@@ -48,9 +48,9 @@ class BasePage:
             print("Timed out: Element not displayed")
             return False
 
-    def current_url(self, expected_url):
+    def does_url_contain(self, expected_text):
         try:
-            self.get_web_driver_wait().until(EC.url_contains(expected_url))
+            self.get_web_driver_wait().until(EC.url_contains(expected_text))
+            return True
         except TimeoutException:
-            pass  # no action is needed in case of Time out Exception as that indicates it waited enough for the expected url
-        return self.driver.current_url
+            return False
