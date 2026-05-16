@@ -37,7 +37,7 @@ class BasePage:
         try:
             self.get_web_driver_wait().until(click_action)
         except TimeoutException:
-            print(f"Timed out: Element was not clickable")
+            print("Timed out: Element was not clickable")
             raise
 
     def is_displayed(self, locator):
