@@ -6,6 +6,7 @@ from utilities.read_json import get_config
 @pytest.fixture(scope="function")
 def driver(test_data):
     driver = webdriver.Chrome()
+    driver.explicit_wait = test_data["explicit_wait"]
     driver.maximize_window()
     driver.get(test_data["base_url"])
     yield driver
